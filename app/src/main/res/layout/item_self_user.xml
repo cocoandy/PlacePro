@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="38dp">
+
+    <ImageView
+        android:id="@+id/item_self_user_cover"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_margin="@dimen/margin_16"
+        android:src="@mipmap/ic_main_self" />
+
+    <TextView
+        android:id="@+id/item_self_user_name"
+        style="@style/text_16"
+        android:layout_marginTop="@dimen/margin_24"
+        android:layout_toRightOf="@+id/item_self_user_cover"
+        android:text="123"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/item_self_user_status"
+        style="@style/text_12"
+        android:layout_below="@+id/item_self_user_name"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_toRightOf="@+id/item_self_user_cover"
+        android:text="企业未认证" />
+
+    <TextView
+        android:id="@+id/item_self_user_msg"
+        style="@style/text_12"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/share_radius1100_e3_15"
+        android:paddingTop="@dimen/padding_3"
+        android:paddingBottom="@dimen/padding_3"
+        android:paddingLeft="@dimen/padding_16"
+        android:paddingRight="@dimen/padding_8"
+        android:text="完善个人信息" />
+
+</RelativeLayout>

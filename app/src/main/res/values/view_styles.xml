@@ -1,0 +1,135 @@
+<resources>
+
+    <!--横向分割线 1dp-->
+    <style name="split_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/split_line</item>
+    </style>
+
+    <!--底部菜单item Icon-->
+    <style name="main_bottom_icon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/bottom_icon_height</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <!--底部菜单item title-->
+    <style name="main_bottom_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/selector_main_bottom_title</item>
+    </style>
+
+    <!--底部菜单item外layout-->
+    <style name="main_bottom_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/app_menu_bottom</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--状态栏底部颜色-->
+    <style name="title_status">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">22dp</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <!--标题栏-->
+    <style name="title_toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <!--刷新加载-->
+    <style name="refresh_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <!--自定义进度条-->
+    <style name="progress_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!--单行文本-->
+    <style name="text_single">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--单行文本后边省略-->
+    <style name="text_single_ellipsize" parent="text_single">
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!--线性布局竖直布局-->
+    <style name="linelayout_vertical">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!--高低自适应-->
+    <style name="layout_mm">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--文字之正常字体-->
+    <style name="text_normal" parent="text_14"></style>
+
+    <!--文字之12-->
+    <style name="text_12" parent="layout_mm">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <!--文字之14-->
+    <style name="text_14" parent="layout_mm">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <!--文字之16-->
+    <style name="text_16" parent="layout_mm">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--文字之18-->
+    <style name="text_18" parent="layout_mm">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!--文字之18-->
+    <style name="text_singleline" parent="layout_mm">
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!--订场地 搜索条件按钮-->
+    <style name="text_ground_menu" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!--订场地 搜索条件按钮-->
+    <style name="ll_ground_menu" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/padding_8</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+</resources>

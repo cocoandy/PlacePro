@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/linelayout_vertical"
+    android:paddingBottom="@dimen/padding_16">
+
+    <ImageView
+        android:id="@+id/item_home_cover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_main_car" />
+
+    <LinearLayout
+        android:id="@+id/item_home_msg"
+        style="@style/linelayout_vertical">
+
+        <TextView
+            android:id="@+id/item_home_name"
+            style="@style/text_single_ellipsize"
+            android:layout_marginTop="@dimen/margin_3"
+            android:text="1"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/item_home_price"
+            style="@style/text_single_ellipsize"
+            android:layout_marginTop="@dimen/margin_3"
+            android:text="1"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+</LinearLayout>
