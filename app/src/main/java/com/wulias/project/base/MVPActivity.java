@@ -1,16 +1,13 @@
 package com.wulias.project.base;
 
 import android.app.Activity;
-import android.app.AppOpsManager;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -25,8 +22,6 @@ import com.wulias.project.tool.Tool;
 import com.wulias.project.view.IHttp;
 import com.wulias.project.view.IMVPView;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +37,10 @@ public abstract class MVPActivity<p extends Presenter> extends AppCompatActivity
     public Activity mContext;
     private Unbinder unbinder;
     public p presenter;
+
+
+    //当前显示的界面
+    private Fragment currFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,7 +81,7 @@ public abstract class MVPActivity<p extends Presenter> extends AppCompatActivity
 
     @Override
     public void initBefor() {
-        presenter = initPresener();
+        presenter = initPresenter();
         presenter.addView(this, this);
     }
 
@@ -148,11 +147,40 @@ public abstract class MVPActivity<p extends Presenter> extends AppCompatActivity
         return result;
     }
 
+
+    /**
+     * 跳转到fragment
+     *
+     * @param fragmentTo   Fragment
+     */
+    public void commitFragment(Fragment fragmentTo,int fragmentId) {
+        FragmentManager manager = getSupportFragmentManager();
+        if (fragmentId == 0 || fragmentTo == null) return;
+
+        FragmentTransaction ft = manager.beginTransaction();
+        if (currFragment == null) {
+            ft.remove(fragmentTo).commit();
+            ft = manager.beginTransaction();
+            ft.add(fragmentId, fragmentTo, fragmentTo.getClass().getName());
+            ft.commit();
+        }else if (fragmentTo.isAdded()) {
+            ft.hide(currFragment).show(fragmentTo).commit();
+            manager.executePendingTransactions();
+        } else {
+            ft.remove(fragmentTo).commit();
+            ft = manager.beginTransaction();
+            ft.hide(currFragment).add(fragmentId, fragmentTo, fragmentTo.getClass().getName());
+            ft.commit();
+        }
+        currFragment = fragmentTo;
+    }
+
+
     public abstract void initView();
 
     public abstract void initData();
 
     public abstract int initLayout();
 
-    protected abstract p initPresener();
+    protected abstract p initPresenter();
 }

@@ -16,13 +16,13 @@
         <TextView
             android:id="@+id/item_self_other_title"
             style="@style/text_normal"
-            android:layout_margin="@dimen/margin_16"
+            android:layout_margin="@dimen/dimens_16"
             android:text="我的订单" />
 
         <TextView
             android:id="@+id/item_self_other_msg"
             style="@style/text_12"
-            android:layout_marginRight="@dimen/margin_8"
+            android:layout_marginRight="@dimen/dimens_8"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/item_self_other_right"
             android:text="" />
@@ -34,7 +34,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
-            android:layout_marginRight="@dimen/margin_16"
+            android:layout_marginRight="@dimen/dimens_16"
             android:src="@mipmap/right" />
     </RelativeLayout>
 

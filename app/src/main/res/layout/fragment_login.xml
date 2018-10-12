@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="@dimen/dimens_16"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_login_phone"
+        style="@style/Edit_Normal"
+        android:hint="请输入手机号"
+        android:inputType="number"
+        android:layout_marginTop="@dimen/dimens_16"/>
+
+    <EditText
+        android:id="@+id/et_login_password"
+        style="@style/Edit_Normal"
+        android:hint="请输入手密码"
+        android:layout_marginTop="@dimen/dimens_16"
+        android:layout_below="@+id/et_login_phone"/>
+
+    <TextView
+        android:id="@+id/tv_login_forget"
+        style="@style/Text_Normal"
+        android:padding="@dimen/dimens_10"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/et_login_password"
+        android:text="忘记密码 ?"/>
+
+    <Button
+        style="@style/Button_Normal"
+        android:layout_below="@+id/tv_login_forget"
+        android:layout_marginTop="@dimen/dimens_16"
+        android:text="@string/btn_login" />
+</RelativeLayout>

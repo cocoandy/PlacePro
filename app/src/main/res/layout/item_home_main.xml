@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/linelayout_vertical"
-    android:paddingBottom="@dimen/padding_16">
+    android:paddingBottom="@dimen/dimens_16">
 
     <ImageView
         android:id="@+id/item_home_cover"
@@ -17,14 +17,14 @@
         <TextView
             android:id="@+id/item_home_name"
             style="@style/text_single_ellipsize"
-            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginTop="@dimen/dimens_3"
             android:text="1"
             android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/item_home_price"
             style="@style/text_single_ellipsize"
-            android:layout_marginTop="@dimen/margin_3"
+            android:layout_marginTop="@dimen/dimens_3"
             android:text="1"
             android:textColor="@color/red" />
     </LinearLayout>

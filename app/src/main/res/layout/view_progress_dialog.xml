@@ -5,7 +5,7 @@
     android:background="@drawable/shape_progress_bar"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="@dimen/margin_16">
+    android:padding="@dimen/dimens_16">
 
     <ProgressBar
         android:id="@+id/_progress_bar"
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginTop="@dimen/dimens_8"
         android:textColor="@color/white" />
 
 </LinearLayout>

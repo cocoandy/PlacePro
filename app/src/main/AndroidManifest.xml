@@ -2,29 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wulias.project">
 
+    <!--<permission-->
+        <!--android:name="com.wulias.project.permission.JPUSH_MESSAGE"-->
+        <!--android:protectionLevel="signature" /> &lt;!&ndash; Required &ndash;&gt;-->
+    <!--<uses-permission android:name="com.wulias.project.permission.JPUSH_MESSAGE" />-->
+    <!--<uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />-->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+    <!--<uses-permission android:name="android.permission.WAKE_LOCK" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.VIBRATE" />-->
+    <!--<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.WRITE_SETTINGS" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> &lt;!&ndash; Optional. Required for location feature &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> &lt;!&ndash; 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+    <!--<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />-->
+    <!--<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.GET_TASKS" />-->
     <uses-permission android:name="android.permission.INTERNET" />
-    <permission
-        android:name="com.wulias.project.permission.JPUSH_MESSAGE"
-        android:protectionLevel="signature" /><!-- Required -->
-    <uses-permission android:name="你的包名.permission.JPUSH_MESSAGE" />
-    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />     <!-- Optional. Required for location feature -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:name=".base.App"
@@ -44,7 +44,43 @@
         </activity>
         <activity android:name=".ui.activity.CityActivity" />
 
+        <receiver
+            android:name=".ui.activity.MyJPushReceiver"
+            android:enabled="true">
 
+            <!-- <intent-filter> -->
+            <!-- &lt;!&ndash;拍照和录像&ndash;&gt; -->
+            <!-- <action android:name="android.hardware.action.NEW_PICTURE" /> -->
+            <!-- <data android:mimeType="image/*" /> -->
+            <!-- <action android:name="android.hardware.action.NEW_VIDEO" /> -->
+            <!-- <data android:mimeType="video/*" /> -->
+            <!-- </intent-filter> -->
+            <intent-filter>
+
+                <!-- &lt;!&ndash;开机&ndash;&gt; -->
+                <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+                <!-- &lt;!&ndash;网络状态变化时&ndash;&gt; -->
+                <!-- <action android:name="android.intent.action.CONFIGURATION_CHANGED" /> -->
+                <!-- &lt;!&ndash;屏幕解锁&ndash;&gt; -->
+                <!-- <action android:name="android.intent.action.SCREEN_ON" /> -->
+                <!-- &lt;!&ndash;按下拍照&ndash;&gt; -->
+                <!-- <action android:name="android.intent.action.CAMERA_BUTTON" /> -->
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="cn.com.fanc.chinesecinema" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ui.activity.LoginActivity"></activity>
     </application>
 
 </manifest>

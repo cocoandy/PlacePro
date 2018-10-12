@@ -34,8 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginLeft="@dimen/margin_16"
-                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginLeft="@dimen/dimens_16"
+                android:layout_marginRight="@dimen/dimens_16"
                 android:src="@mipmap/ic_more" />
         </RelativeLayout>
 
@@ -97,25 +97,25 @@
 
         <TextView
             style="@style/text_ground_menu"
-            android:layout_margin="@dimen/margin_8"
+            android:layout_margin="@dimen/dimens_8"
             android:background="@drawable/share_radius1111_e3_16"
             android:text="主题场地" />
 
         <TextView
             style="@style/text_ground_menu"
-            android:layout_margin="@dimen/margin_8"
+            android:layout_margin="@dimen/dimens_8"
             android:background="@drawable/share_radius1111_e3_16"
             android:text="热卖" />
 
         <TextView
             style="@style/text_ground_menu"
-            android:layout_margin="@dimen/margin_8"
+            android:layout_margin="@dimen/dimens_8"
             android:background="@drawable/share_radius1111_e3_16"
             android:text="优惠" />
 
         <TextView
             style="@style/text_ground_menu"
-            android:layout_margin="@dimen/margin_8"
+            android:layout_margin="@dimen/dimens_8"
             android:background="@drawable/share_radius1111_e3_16"
             android:text="上新" />
     </LinearLayout>

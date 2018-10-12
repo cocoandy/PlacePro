@@ -18,6 +18,8 @@ public interface Constacts {
 
    int REFRESHLOADMORE_TIME_OUT = 2; //舒心超时时间
 
+    String LOGIN_FORGET = "login_forget";
+
 
 
 }

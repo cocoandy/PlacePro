@@ -1,15 +1,19 @@
 package com.wulias.project.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.wulias.project.R;
 import com.wulias.project.base.MVPFragment;
 import com.wulias.project.bean.SelfBean;
 import com.wulias.project.presenter.SelfPresenter;
 import com.wulias.project.presenter.TestPresenter;
+import com.wulias.project.ui.activity.LoginActivity;
 import com.wulias.project.ui.adapter.SelfAdapter;
 import com.wulias.project.weight.SpacesItemDecoration;
 import com.wulias.project.tool.UI;
@@ -18,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
 /**
@@ -30,6 +35,8 @@ public class SelfFragment extends MVPFragment<SelfPresenter> {
     RecyclerView mRvSelf;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.img_self_setting)
+    ImageView mImgSetting;
 
     private SelfAdapter adapter;
     private List<SelfBean> mData;
@@ -91,6 +98,11 @@ public class SelfFragment extends MVPFragment<SelfPresenter> {
                 }
             }
         });
+    }
+
+    @OnClick({R.id.img_self_setting})
+    public void onClick(View view) {
+        startActivity(new Intent(mContext, LoginActivity.class));
     }
 
 

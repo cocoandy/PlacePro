@@ -128,8 +128,36 @@
     <style name="ll_ground_menu" >
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:padding">@dimen/padding_8</item>
+        <item name="android:padding">@dimen/dimens_8</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_weight">1</item>
+    </style>
+
+    <!--按钮-->
+    <style name="Button_Normal" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_normal</item>
+        <item name="android:layout_marginLeft">@dimen/dimens_16</item>
+        <item name="android:layout_marginRight">@dimen/dimens_16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_button_normal</item>
+    </style>
+
+    <!--输入框-->
+    <style name="Edit_Normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/edit_normal</item>
+        <item name="android:layout_marginLeft">@dimen/dimens_16</item>
+        <item name="android:layout_marginRight">@dimen/dimens_16</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">@drawable/bg_editext_normal</item>
+    </style>
+
+    <!--输入框-->
+    <style name="Text_Normal" parent="WraWra">
+        <item name="android:layout_marginLeft">@dimen/dimens_16</item>
+        <item name="android:layout_marginRight">@dimen/dimens_16</item>
+        <item name="android:textSize">13sp</item>
     </style>
 </resources>

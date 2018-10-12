@@ -50,7 +50,7 @@ public class CityActivity extends MVPActivity<CityPresenter> implements LetterNa
     }
 
     @Override
-    protected CityPresenter initPresener() {
+    protected CityPresenter initPresenter() {
         return new CityPresenter();
     }
 
