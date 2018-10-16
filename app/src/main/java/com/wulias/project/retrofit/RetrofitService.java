@@ -13,12 +13,11 @@ import retrofit2.http.POST;
  * 2018/9/26
  */
 public interface RetrofitService {
-
     @FormUrlEncoded
-    @POST("Common/cinemaList")
+    @POST("Login/login")
     Observable<Object> getCinemaList(@FieldMap Map<String, String> map); //获取影院列表
 
     @FormUrlEncoded
-    @POST("Public/qrcodeTicket")
+    @POST("Public/Login/register")
     Observable<Object> getTickets(@FieldMap Map<String, String> map); //票信息
 }

@@ -85,10 +85,10 @@ public class MainActivity extends MVPActivity<TestPresenter> {
     protected TestPresenter initPresenter() {
         return new TestPresenter();
     }
-
-    private final String API_KEY = "d8defbac95624cfe819fe3e565c2073b";
+//    http://route.showapi.com/909-1?showapi_sign=cfaad40ce5da4fc8a92340f069739ba1&showapi_appid=77481&from=%E6%A2%A7%E5%B7%9E%E5%8D%97&to=%E5%8D%97%E5%AE%81&trainDate=2018-10-18
+    private final String API_KEY = "cfaad40ce5da4fc8a92340f069739ba1";
     private final String HTTP_URL = "http://route.showapi.com/909-1";
-    private final String HTTP_ARG = "showapi_appid=77162&from=START&to=END&trainDate=YEAR-MOUTH-DAY";
+    private final String HTTP_ARG = "showapi_appid=77481&from=START&to=END&trainDate=YEAR-MOUTH-DAY";
 
     private void inquireTrainTickets() {
         Log.i("2------", "jinru");
@@ -99,7 +99,7 @@ public class MainActivity extends MVPActivity<TestPresenter> {
                         .replace("END", "南宁")
                         .replace("YEAR", "" + 2018)
                         .replace("MOUTH", "" + 10)
-                        .replace("DAY", "26");
+                        .replace("DAY", "18");
 
 //            Utils.showLog(httpArg);
 //        Log.i("3------", httpArg);
@@ -130,6 +130,7 @@ public class MainActivity extends MVPActivity<TestPresenter> {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        MsgTool.showShortToast(result);
         Log.i("5------", result);
 //            setTrainTicketList(result);
     }

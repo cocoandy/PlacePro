@@ -3,23 +3,25 @@ package com.wulias.project.tool;
 import android.app.AppOpsManager;
 import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.widget.Toast;
+import android.text.TextUtils;
 
 import com.github.promeg.pinyinhelper.Pinyin;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.wulias.project.base.App;
-import com.wulias.project.base.BaseInfo;
+import com.wulias.project.base.BaseVo;
 import com.wulias.project.base.BaseTool;
+import com.wulias.project.constacts.Constacts;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
-import java.util.Date;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -28,16 +30,36 @@ import java.util.Map;
  * Created by Gavin
  * 2018/9/29
  */
-public class Tool extends BaseTool{
+public class Tool extends BaseTool {
 
     /**
      * BaseApi 转为Map
      */
-    public static Map<String, String> toMap(BaseInfo api) {
+    public static Map<String, String> toMap(BaseVo api) {
         Gson gson = new Gson();
         Type type = new TypeToken<Map<String, String>>() {
         }.getType();
         return gson.fromJson(gson.toJson(api), type);
+    }
+
+    /**
+     * 请求参数对象转成map并加入校验参数
+     * BaseApi 转为Map
+     */
+    public static Map<String, String> toApiMap(BaseVo api) {
+        Map<String, String> map = toMap(api);
+        List<String> keyList = new ArrayList<>(map.keySet());
+        //对key列表排序
+        Collections.sort(keyList);
+        //取值
+        StringBuffer sb = new StringBuffer();
+        for (String key : keyList) {
+            sb.append(key);
+        }
+        String sign = sb.toString();
+        //对值进行md5加密
+        map.put(Constacts.Key.KEY_HTTP_SIGN, md5(sign));
+        return map;
     }
 
     /**
@@ -111,6 +133,11 @@ public class Tool extends BaseTool{
     }
 
 
+    /**
+     * 设置通知栏通知
+     *
+     * @return
+     */
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static boolean isNotificationEnabled() {
 
@@ -146,5 +173,34 @@ public class Tool extends BaseTool{
         return false;
     }
 
+    /**************************     加密   ********************************/
+
+    /***
+     * MD5加密
+     * @param string
+     * @return
+     */
+    public static String md5(String string) {
+        if (TextUtils.isEmpty(string)) {
+            return "";
+        }
+        MessageDigest md5 = null;
+        try {
+            md5 = MessageDigest.getInstance("MD5");
+            byte[] bytes = md5.digest(string.getBytes());
+            StringBuilder result = new StringBuilder();
+            for (byte b : bytes) {
+                String temp = Integer.toHexString(b & 0xff);
+                if (temp.length() == 1) {
+                    temp = "0" + temp;
+                }
+                result.append(temp);
+            }
+            return result.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 
 }

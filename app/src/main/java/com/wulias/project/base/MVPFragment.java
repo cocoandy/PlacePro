@@ -72,13 +72,13 @@ public abstract class MVPFragment<p extends Presenter> extends Fragment implemen
     @Override
     public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
         //第三方刷新加载-->加载
-        refreshLayout.finishLoadMore(Constacts.REFRESHLOADMORE_TIME_OUT);
+        refreshLayout.finishLoadMore(Constacts.TimeKey.REFRESHLOADMORE_TIME_OUT);
     }
 
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         //第三方刷新加载-->刷新
-        refreshLayout.finishRefresh(Constacts.REFRESHLOADMORE_TIME_OUT);
+        refreshLayout.finishRefresh(Constacts.TimeKey.REFRESHLOADMORE_TIME_OUT);
     }
 
 
@@ -119,7 +119,7 @@ public abstract class MVPFragment<p extends Presenter> extends Fragment implemen
             Toast.makeText(mContext, "已经授权", Toast.LENGTH_LONG).show();
         } else {//请求权限方法
             String[] permis = mPermissionList.toArray(new String[mPermissionList.size()]);//将List转为数组
-            ActivityCompat.requestPermissions(mContext, permis, Constacts.MY_PERMISSIONS_REQUEST_CALL_CAMERA);
+            ActivityCompat.requestPermissions(mContext, permis, Constacts.ResultCode.CODE_PERMISSIONS_CALL_CAMERA);
         }
     }
 

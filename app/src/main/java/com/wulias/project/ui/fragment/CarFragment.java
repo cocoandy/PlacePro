@@ -99,14 +99,14 @@ public class CarFragment extends MVPFragment<CarPresenter> implements OnRefreshL
     @Override
     public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
         //加载
-        refreshLayout.finishLoadMore(Constacts.REFRESHLOADMORE_TIME_OUT);//设置延迟时间
+        refreshLayout.finishLoadMore(Constacts.TimeKey.REFRESHLOADMORE_TIME_OUT);//设置延迟时间
         handler.sendEmptyMessageAtTime(0,2000);
     }
 
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         //刷新
-        refreshLayout.finishRefresh(Constacts.REFRESHLOADMORE_TIME_OUT);//设置延迟时间
+        refreshLayout.finishRefresh(Constacts.TimeKey.REFRESHLOADMORE_TIME_OUT);//设置延迟时间
         circularArray.clear();
         adapter.notifyDataSetChanged();
 
