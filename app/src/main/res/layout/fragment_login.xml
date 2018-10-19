@@ -1,35 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:padding="@dimen/dimens_16"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatMat"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Text_Normal"
+        android:padding="@dimen/dimens_8"
+        android:text="@string/fragment_login_hello"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/view_magin_top"
+        android:textSize="@dimen/size_26"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/Text_Normal"
+        android:padding="@dimen/dimens_8"
+        android:text="@string/fragment_login_welcom"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/et_login_phone"
-        style="@style/Edit_Normal"
+        style="@style/Edit_NoBg_MW"
+        android:layout_marginTop="@dimen/view_magin_top"
         android:hint="请输入手机号"
-        android:inputType="number"
-        android:layout_marginTop="@dimen/dimens_16"/>
+        android:inputType="number" />
+
+    <View style="@style/Line_W" />
 
     <EditText
         android:id="@+id/et_login_password"
-        style="@style/Edit_Normal"
-        android:hint="请输入手密码"
-        android:layout_marginTop="@dimen/dimens_16"
-        android:layout_below="@+id/et_login_phone"/>
+        style="@style/Edit_NoBg_MW"
+        android:layout_marginTop="@dimen/dimens_1"
+        android:hint="请输入手密码" />
+
+    <View style="@style/Line_W" />
+
+    <Button
+        android:id="@+id/btn_login_submit"
+        style="@style/Button_Normal"
+        android:layout_marginTop="@dimen/view_magin_top"
+        android:text="@string/btn_login" />
 
     <TextView
         android:id="@+id/tv_login_forget"
         style="@style/Text_Normal"
+        android:layout_gravity="right"
         android:padding="@dimen/dimens_10"
-        android:textColor="@color/colorPrimary"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/et_login_password"
-        android:text="忘记密码 ?"/>
-
-    <Button
-        style="@style/Button_Normal"
-        android:layout_below="@+id/tv_login_forget"
-        android:layout_marginTop="@dimen/dimens_16"
-        android:text="@string/btn_login" />
-</RelativeLayout>
+        android:text="忘记密码 ?" />
+</LinearLayout>

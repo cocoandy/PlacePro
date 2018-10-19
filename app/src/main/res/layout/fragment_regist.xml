@@ -1,42 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatMat"
+    android:orientation="vertical">
 
     <EditText
-        android:id="@+id/et_login_phone"
-        style="@style/Edit_Normal"
-        android:hint="请输入手机号"
-        android:layout_marginTop="@dimen/dimens_16"/>
+        android:id="@+id/et_regist_phone"
+        style="@style/Edit_NoBg_MW"
+        android:layout_height="42dp"
+        android:layout_marginTop="@dimen/view_magin_top"
+        android:hint="@string/fragment_regist_hint_username" />
+
+    <View style="@style/Line_W" />
+
+    <LinearLayout
+        style="@style/MatWra"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/et_regist_code"
+            style="@style/Edit_NoBg_MW"
+            android:inputType="number"
+            android:layout_weight="1"
+            android:hint="@string/fragment_regist_hint_code" />
+
+        <Button
+            android:id="@+id/btn_regist_code"
+            style="@style/Button_Normal"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_small"
+            android:text="@string/btn_code" />
+    </LinearLayout>
+
+    <View style="@style/Line_W" />
+
     <EditText
-        android:id="@+id/et_login_code"
-        style="@style/Edit_Normal"
-        android:hint="请输入验证码"
-        android:layout_toLeftOf="@+id/btn_login_code"
-        android:layout_marginTop="@dimen/dimens_16"
-        android:layout_below="@+id/et_login_phone"/>
+        android:id="@+id/et_regist_nickname"
+        style="@style/Edit_NoBg_MW"
+        android:hint="@string/fragment_regist_hint_nickname" />
+
+    <View style="@style/Line_W" />
+
+    <EditText
+        android:id="@+id/et_regist_password"
+        style="@style/Edit_NoBg_MW"
+        android:hint="@string/fragment_regist_hint_password" />
+
+    <View style="@style/Line_W" />
+
+    <EditText
+        android:id="@+id/et_regist_repassword"
+        style="@style/Edit_NoBg_MW"
+        android:hint="@string/fragment_regist_hint_repassword" />
+
+    <View style="@style/Line_W" />
 
     <Button
-        android:id="@+id/btn_login_code"
+        android:id="@+id/btn_regist_submit"
         style="@style/Button_Normal"
-        android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/et_login_phone"
-        android:layout_marginTop="@dimen/dimens_16"
-        android:text="@string/btn_code" />
-
-    <EditText
-        android:id="@+id/et_login_password"
-        style="@style/Edit_Normal"
-        android:layout_marginTop="@dimen/dimens_16"
-        android:hint="请输入登录密码"
-        android:layout_below="@+id/et_login_code"/>
-
-    <Button
-        android:id="@+id/btn_login_submit"
-        style="@style/Button_Normal"
-        android:layout_below="@+id/et_login_password"
-        android:layout_marginTop="@dimen/dimens_16"
+        android:layout_marginTop="@dimen/view_magin_top"
         android:text="@string/btn_regist" />
-</RelativeLayout>
+</LinearLayout>

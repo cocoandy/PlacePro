@@ -7,6 +7,7 @@ import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.github.promeg.pinyinhelper.Pinyin;
 import com.google.gson.Gson;
@@ -54,11 +55,12 @@ public class Tool extends BaseTool {
         //取值
         StringBuffer sb = new StringBuffer();
         for (String key : keyList) {
-            sb.append(key);
+            sb.append(map.get(key));
+            sb.append(Constacts.MD5_KEY_VALUE_END);
         }
-        String sign = sb.toString();
+        sb.append(Constacts.MD5_KEY_END);
         //对值进行md5加密
-        map.put(Constacts.Key.KEY_HTTP_SIGN, md5(sign));
+        map.put(Constacts.Key.KEY_HTTP_SIGN, md5(sb.toString()));
         return map;
     }
 

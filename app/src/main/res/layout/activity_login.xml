@@ -6,39 +6,29 @@
     android:orientation="vertical"
     tools:context="ui.activity.LoginActivity">
 
-    <android.support.design.widget.AppBarLayout
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="210dp"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/translucent"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-        <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="20dp"
-            android:src="@mipmap/ic_launcher"
-            android:layout_gravity="center_horizontal"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/translucent"
+        android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/tv_login_action"
             style="@style/Text_Normal"
             android:layout_gravity="right"
             android:padding="@dimen/dimens_8"
-            android:layout_marginTop="@dimen/dimens_20"
             android:text="@string/action_regist" />
 
-    </android.support.design.widget.AppBarLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <View style="@style/split_line" />
+
 
     <FrameLayout
         android:id="@+id/fl_login_main"
-        style="@style/MatMat"/>
+        style="@style/MatMat" />
 
 
 </LinearLayout>

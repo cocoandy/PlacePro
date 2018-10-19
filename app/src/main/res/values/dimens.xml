@@ -8,7 +8,6 @@
     <dimen name="width_progressbar">30dp</dimen>
     <dimen name="radius_progressbar">8dp</dimen>
 
-
     <dimen name="dimens_1">1dp</dimen>
     <dimen name="dimens_2">2dp</dimen>
     <dimen name="dimens_3">3dp</dimen>
@@ -40,11 +39,43 @@
     <dimen name="dimens_29">29dp</dimen>
     <dimen name="dimens_30">30dp</dimen>
 
+
+
+    <dimen name="size_8">8dp</dimen>
+    <dimen name="size_9">9dp</dimen>
+    <dimen name="size_10">10dp</dimen>
+    <dimen name="size_12">12dp</dimen>
+    <dimen name="size_13">13dp</dimen>
+    <dimen name="size_14">14dp</dimen>
+    <dimen name="size_15">15dp</dimen>
+    <dimen name="size_16">16dp</dimen>
+    <dimen name="size_17">17dp</dimen>
+    <dimen name="size_18">18dp</dimen>
+    <dimen name="size_19">19dp</dimen>
+    <dimen name="size_20">20dp</dimen>
+    <dimen name="size_21">21dp</dimen>
+    <dimen name="size_22">22dp</dimen>
+    <dimen name="size_23">23dp</dimen>
+    <dimen name="size_24">24dp</dimen>
+    <dimen name="size_25">25dp</dimen>
+    <dimen name="size_26">26dp</dimen>
+    <dimen name="size_27">27dp</dimen>
+    <dimen name="size_28">28dp</dimen>
+    <dimen name="size_29">29dp</dimen>
+    <dimen name="size_30">30dp</dimen>
+    <dimen name="size_31">31dp</dimen>
+    <dimen name="size_32">32dp</dimen>
+    <dimen name="size_33">33dp</dimen>
+    <dimen name="size_34">34dp</dimen>
+
     <dimen name="text_normal">42dp</dimen>
     <dimen name="button_normal">42dp</dimen>
     <dimen name="edit_normal">42dp</dimen>
 
-    
+    <dimen name="button_small">35dp</dimen>
+    <dimen name="view_magin_top">35dp</dimen>
+
+
     
 
 </resources>

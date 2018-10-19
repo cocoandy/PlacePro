@@ -15,9 +15,9 @@ import retrofit2.http.POST;
 public interface RetrofitService {
     @FormUrlEncoded
     @POST("Login/login")
-    Observable<Object> getCinemaList(@FieldMap Map<String, String> map); //获取影院列表
+    Observable<Object> loginLogin(@FieldMap Map<String, String> map); //登录
 
     @FormUrlEncoded
-    @POST("Public/Login/register")
-    Observable<Object> getTickets(@FieldMap Map<String, String> map); //票信息
+    @POST("Login/register")
+    Observable<Object> loginRegister(@FieldMap Map<String, String> map); //注册
 }

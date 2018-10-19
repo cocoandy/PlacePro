@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import com.wulias.project.constacts.Constacts;
+import com.wulias.project.tool.Tool;
 import com.wulias.project.view.IHttp;
 import com.wulias.project.view.IMVPView;
 
@@ -90,18 +92,18 @@ public abstract class MVPFragment<p extends Presenter> extends Fragment implemen
 
     @Override
     public void onSuccess(String json) {
-        //网络请求之成功
+        Log.e("onSuccess>>>>>>>" + "TAG_OO", json);
     }
 
     @Override
     public void onFail(Object t) {
-        //网络请求之失败并结束，和onCompleted互斥
+        Log.e("TAG_OO", "onFail>>>>>>>" + Tool.beanToString(t));
     }
 
-    @Override
     public void onCompleted() {
-        //网络请求之结束，和onFail互斥
+        Log.e("TAG_OO", "OVER>>>>>>>");
     }
+
 
     /**
      * 权限请求

@@ -5,8 +5,11 @@ package com.wulias.project.constacts;
  * 2018/9/29
  */
 public interface Constacts {
-    String BASE_URL = "https://jumu.jukest.com/app/";    //网址共同
 
+    String BASE_URL = "http://jumu.jukest.com/app/";    //网址共同
+
+    String MD5_KEY_VALUE_END = "JKWL";    //
+    String MD5_KEY_END = "JMCM123456";    //网址共同
 
     /**
      * 关于时间的常量
@@ -17,7 +20,7 @@ public interface Constacts {
     }
 
     /**
-     *传参的key
+     * 传参的key
      */
     interface Key {
         String KEY_GROUP_ID = "group_id"; //影院组id

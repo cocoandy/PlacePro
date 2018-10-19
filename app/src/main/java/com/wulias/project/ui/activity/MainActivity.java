@@ -48,12 +48,6 @@ public class MainActivity extends MVPActivity<TestPresenter> {
             MsgTool.showShortToast("已经开启通知");
         }
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                inquireTrainTickets();
-            }
-        }).start();
     }
 
     private void goToSet() {
@@ -84,54 +78,5 @@ public class MainActivity extends MVPActivity<TestPresenter> {
     @Override
     protected TestPresenter initPresenter() {
         return new TestPresenter();
-    }
-//    http://route.showapi.com/909-1?showapi_sign=cfaad40ce5da4fc8a92340f069739ba1&showapi_appid=77481&from=%E6%A2%A7%E5%B7%9E%E5%8D%97&to=%E5%8D%97%E5%AE%81&trainDate=2018-10-18
-    private final String API_KEY = "cfaad40ce5da4fc8a92340f069739ba1";
-    private final String HTTP_URL = "http://route.showapi.com/909-1";
-    private final String HTTP_ARG = "showapi_appid=77481&from=START&to=END&trainDate=YEAR-MOUTH-DAY";
-
-    private void inquireTrainTickets() {
-        Log.i("2------", "jinru");
-        String httpUrl;
-        String httpArg =
-                HTTP_ARG.
-                        replace("START", "梧州南")
-                        .replace("END", "南宁")
-                        .replace("YEAR", "" + 2018)
-                        .replace("MOUTH", "" + 10)
-                        .replace("DAY", "18");
-
-//            Utils.showLog(httpArg);
-//        Log.i("3------", httpArg);
-        BufferedReader reader = null;
-        String result = null;
-        StringBuffer sbf = new StringBuffer();
-        httpUrl = HTTP_URL + "?showapi_sign=" + API_KEY + "&" + httpArg;
-        Log.i("4------", httpUrl);
-        try {
-            URL url = new URL(httpUrl);
-            Log.i("2222------", url.toString());
-            HttpURLConnection connection = (HttpURLConnection) url
-                    .openConnection();
-            connection.setRequestMethod("POST");
-            //connection.setRequestProperty("apikey",  API_KEY);
-            connection.connect();
-            InputStream is = connection.getInputStream();
-            Log.i("6------", is.toString());
-            reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
-            String strRead = null;
-            while ((strRead = reader.readLine()) != null) {
-                Log.i("7------", strRead);
-                sbf.append(strRead);
-                sbf.append("\r\n");
-            }
-            reader.close();
-            result = sbf.toString();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        MsgTool.showShortToast(result);
-        Log.i("5------", result);
-//            setTrainTicketList(result);
     }
 }

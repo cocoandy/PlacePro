@@ -16,6 +16,12 @@ public class RegistVo extends BaseVo {
     @SerializedName("user_password")
     private String userPassword;
 
+    public RegistVo(String userName, String userNickname, String userPassword) {
+        this.userName = userName;
+        this.userNickname = userNickname;
+        this.userPassword = userPassword;
+    }
+
     public String getUserName() {
         return userName;
     }

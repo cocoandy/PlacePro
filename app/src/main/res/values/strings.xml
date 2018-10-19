@@ -11,6 +11,16 @@
     <string name="btn_login">登\t\t\t\t\t录</string>
     <string name="btn_regist">注\t\t\t\t\t册</string>
     <string name="btn_code">验证码</string>
-    <string name="action_login">直接登录-->></string>
-    <string name="action_regist">立即注册-->></string>
+    <string name="action_login">直接登录</string>
+    <string name="action_regist">立即注册</string>
+
+    <!-- LoginFragment -->
+    <string name="fragment_login_hello">你好，</string>
+    <string name="fragment_login_welcom">欢迎来到巨幕传媒!</string>
+    <!-- LoginFragment -->
+    <string name="fragment_regist_hint_password">请输入密码</string>
+    <string name="fragment_regist_hint_repassword">请确认密码</string>
+    <string name="fragment_regist_hint_nickname">请输入昵称</string>
+    <string name="fragment_regist_hint_code">请输入验证码</string>
+    <string name="fragment_regist_hint_username">请输入手机号</string>
 </resources>

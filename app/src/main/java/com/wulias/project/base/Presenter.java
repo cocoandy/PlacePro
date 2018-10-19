@@ -14,7 +14,8 @@ public abstract class Presenter<V> {
     public V view;
     private IHttp http;
 
-    void Presenter(){
+
+    public Presenter(){
 
     }
     /**
