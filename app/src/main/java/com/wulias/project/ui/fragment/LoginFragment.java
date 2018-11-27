@@ -1,18 +1,21 @@
 package com.wulias.project.ui.fragment;
 
-import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.EditText;
 
 import com.wulias.project.R;
+import com.wulias.project.base.BaseBean;
+import com.wulias.project.base.LoginBean;
 import com.wulias.project.base.MVPFragment;
-import com.wulias.project.bean.LoginVo;
-import com.wulias.project.constacts.Constacts;
+import com.wulias.project.bean.vo.LoginVo;
+import com.wulias.project.bean.vo.UserVo;
 import com.wulias.project.listener.CallBack;
+import com.wulias.project.manage.ResultManage;
 import com.wulias.project.presenter.LoginPresenter;
-import com.wulias.project.tool.LiveDataBus;
 import com.wulias.project.tool.MsgTool;
 import com.wulias.project.tool.Tool;
 
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -21,6 +24,10 @@ import butterknife.OnClick;
  */
 
 public class LoginFragment extends MVPFragment<LoginPresenter> {
+    @BindView(R.id.et_login_phone)
+    EditText mEtPhone;
+    @BindView(R.id.et_login_password)
+    EditText mEtPassword;
 
     private CallBack.LoginCallBack loginCallBack;
 
@@ -48,6 +55,18 @@ public class LoginFragment extends MVPFragment<LoginPresenter> {
         this.loginCallBack = loginCallBack;
     }
 
+    @Override
+    public void onSuccess(BaseBean json, Object object) {
+        super.onSuccess(json, object);
+        if (object instanceof LoginBean){
+           BaseBean<LoginBean> loginBean = (BaseBean<LoginBean>) object;
+            if (loginBean.getCode()==0){
+                presenter.userDetail(new UserVo(0L));
+                mContext.finish();
+            }
+        }
+    }
+
     @OnClick({R.id.tv_login_forget, R.id.btn_login_submit})
     public void OnClick(View view) {
         switch (view.getId()) {
@@ -66,8 +85,8 @@ public class LoginFragment extends MVPFragment<LoginPresenter> {
      * 登录
      */
     public void login() {
-        String userName = "";
-        String userPassword = "";
+        String userName = mEtPhone.getText().toString().trim();
+        String userPassword = mEtPassword.getText().toString().trim();
 
         if (Tool.isEmpty(userName)) {
             MsgTool.showShortToast("");
@@ -77,7 +96,7 @@ public class LoginFragment extends MVPFragment<LoginPresenter> {
             MsgTool.showShortToast("");
             return;
         }
-        presenter.login(new LoginVo());
+        presenter.login(new LoginVo(userName,userPassword));
     }
 
 }

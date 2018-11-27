@@ -1,5 +1,7 @@
 package com.wulias.project.view;
 
+import com.wulias.project.base.BaseBean;
+
 /**
  * Created by Gavin
  * 2018/9/26
@@ -8,9 +10,9 @@ public interface IHttp {
 
     /**
      * 请求成功
-     * @param json 返回值
+     * @param bean 返回值
      */
-    void onSuccess(String json);
+    void onSuccess(BaseBean bean, Object object);
 
     /**
      * 请求失败

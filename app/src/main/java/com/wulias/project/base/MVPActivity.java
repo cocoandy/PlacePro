@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import com.wulias.project.constacts.Constacts;
+import com.wulias.project.tool.SPTool;
 import com.wulias.project.tool.Tool;
 import com.wulias.project.view.IHttp;
 import com.wulias.project.view.IMVPView;
@@ -37,6 +38,7 @@ public abstract class MVPActivity<p extends Presenter> extends AppCompatActivity
     public Activity mContext;
     private Unbinder unbinder;
     public p presenter;
+    public SPTool spTool;
 
 
     //当前显示的界面
@@ -47,8 +49,12 @@ public abstract class MVPActivity<p extends Presenter> extends AppCompatActivity
         super.onCreate(savedInstanceState);
         initBefor();
         setContentView(initLayout());
+
         mContext = this;
         unbinder = ButterKnife.bind(this);
+
+        spTool = new SPTool(mContext);
+
         initView();
         initData();
     }
@@ -86,8 +92,8 @@ public abstract class MVPActivity<p extends Presenter> extends AppCompatActivity
     }
 
     @Override
-    public void onSuccess(String json) {
-        Log.e("onSuccess>>>>>>>" + "TAG_OO", json);
+    public void onSuccess(BaseBean json,Object object) {
+        Log.e("onSuccess>>>>>>>" + "TAG_OO", Tool.beanToString(object));
     }
 
     @Override
@@ -104,18 +110,20 @@ public abstract class MVPActivity<p extends Presenter> extends AppCompatActivity
      *
      * @param permissions
      */
-    public void getPermissions(String[] permissions) {
+    public boolean getPermissions(String[] permissions) {
         List<String> mPermissionList = new ArrayList();
         for (int i = 0; i < permissions.length; i++) {
             if (ContextCompat.checkSelfPermission(mContext, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
                 mPermissionList.add(permissions[i]);
             }
         }
+
         if (mPermissionList.isEmpty()) {//未授予的权限为空，表示都授予了
-            Toast.makeText(mContext, "已经授权", Toast.LENGTH_LONG).show();
+            return true;
         } else {//请求权限方法
             String[] permis = mPermissionList.toArray(new String[mPermissionList.size()]);//将List转为数组
             ActivityCompat.requestPermissions(mContext, permis, Constacts.ResultCode.CODE_PERMISSIONS_CALL_CAMERA);
+            return false;
         }
     }
 
@@ -131,6 +139,20 @@ public abstract class MVPActivity<p extends Presenter> extends AppCompatActivity
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.setNavigationOnClickListener(onClickListener);
+    }
+
+    /**
+     * 设置Toolbar左侧返回箭头
+     * @param toolbar
+     * @param onClickListener
+     */
+    public void setToolbar(Toolbar toolbar,int title, View.OnClickListener onClickListener) {
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        this.getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar.setNavigationOnClickListener(onClickListener);
+        toolbar.setTitle(title);
     }
 
     /**

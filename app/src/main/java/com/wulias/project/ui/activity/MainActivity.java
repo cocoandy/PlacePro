@@ -5,46 +5,50 @@ import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.FutureTarget;
+import com.bumptech.glide.request.target.Target;
 import com.wulias.navigation.widget.NavigationBar;
 import com.wulias.project.R;
+import com.wulias.project.base.BaseBean;
+import com.wulias.project.base.BaseVo;
 import com.wulias.project.base.MVPActivity;
-import com.wulias.project.bean.UserInfo;
-import com.wulias.project.presenter.TestPresenter;
+import com.wulias.project.bean.AdvertBean;
+import com.wulias.project.presenter.MainPresenter;
 import com.wulias.project.tool.MsgTool;
 import com.wulias.project.tool.Tool;
+import com.wulias.project.view.IMainView;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.io.File;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.internal.Utils;
 
-public class MainActivity extends MVPActivity<TestPresenter> {
+public class MainActivity extends MVPActivity<MainPresenter> implements IMainView {
     @BindView(R.id.selft_bottom_menu)
     NavigationBar mBmMenu;
     List<Fragment> mList;
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
-    public void initView() {
+    public void initBefor() {
+        super.initBefor();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //4.4以后此方法设置状态栏透明
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
+    }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void initView() {
         presenter.initNavigation(getSupportFragmentManager(), mBmMenu);
         if (!Tool.isNotificationEnabled()) {
             goToSet();
         } else {
+
             MsgTool.showShortToast("已经开启通知");
         }
 
@@ -66,8 +70,8 @@ public class MainActivity extends MVPActivity<TestPresenter> {
 
     @Override
     public void initData() {
-//        showProgress();
-//        presenter.loadingAll();
+        presenter.advert(new BaseVo());
+
     }
 
     @Override
@@ -76,7 +80,55 @@ public class MainActivity extends MVPActivity<TestPresenter> {
     }
 
     @Override
-    protected TestPresenter initPresenter() {
-        return new TestPresenter();
+    protected MainPresenter initPresenter() {
+        return new MainPresenter();
     }
+
+    @Override
+    public void onSuccess(BaseBean bean, Object object) {
+        super.onSuccess(bean, object);
+        if (bean.getData() instanceof AdvertBean) {
+            BaseBean<AdvertBean> advertBean = (BaseBean<AdvertBean>) object;
+            loadingAdvert(advertBean.getData().getCover());
+        }
+    }
+
+    public void loadingAdvert(final String url) {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                // 文件名
+                final String fileName = url.substring(url.lastIndexOf("/") + 1);
+                if (!fileName.contains(".")) {
+                    return;
+                }
+                File imgFile = null;
+                try {
+                    FutureTarget<File> futureTarget = Glide.with(mContext)
+                            .load(url)
+                            .downloadOnly(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL);
+
+                    imgFile = futureTarget.get();
+                } catch (Exception e) {
+                }
+
+                String path = Tool.getDir();
+                File file = new File(path + "/" + "124.jpg");
+                if (!file.exists()) {
+                    Tool.copy(imgFile, file);
+                }
+
+            }
+
+
+        }.start();
+
+    }
+
+    @Override
+    public void changePage(int position, boolean isFulllScreen) {
+    }
+
+
 }

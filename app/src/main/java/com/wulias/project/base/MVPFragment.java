@@ -49,7 +49,7 @@ public abstract class MVPFragment<p extends Presenter> extends Fragment implemen
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(initLayout(), null, false);
-        unbinder = ButterKnife.bind(this,view);
+        unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
@@ -91,8 +91,8 @@ public abstract class MVPFragment<p extends Presenter> extends Fragment implemen
     }
 
     @Override
-    public void onSuccess(String json) {
-        Log.e("onSuccess>>>>>>>" + "TAG_OO", json);
+    public void onSuccess(BaseBean bean, Object object) {
+        Log.e("TAG_OO", "onSuccess>>>>>>>" + bean);
     }
 
     @Override
@@ -101,7 +101,6 @@ public abstract class MVPFragment<p extends Presenter> extends Fragment implemen
     }
 
     public void onCompleted() {
-        Log.e("TAG_OO", "OVER>>>>>>>");
     }
 
 
@@ -138,6 +137,15 @@ public abstract class MVPFragment<p extends Presenter> extends Fragment implemen
             result = getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    }
+
+    /**
+     * 用view设置StatusBar
+     */
+    public void showStatusBar(View statusBar){
+        ViewGroup.LayoutParams params = statusBar.getLayoutParams();
+        params.height = getStatusBarHeight();
+        statusBar.setLayoutParams(params);
     }
 
     public abstract void initView();

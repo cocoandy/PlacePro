@@ -9,10 +9,12 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/translucent"
+        style="@style/Toolbar_Translucent"
         android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/ToolBar_Title"/>
 
         <TextView
             android:id="@+id/tv_login_action"

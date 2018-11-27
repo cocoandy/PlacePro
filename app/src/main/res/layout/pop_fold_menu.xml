@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatMat">
+
+    <RelativeLayout
+        android:id="@+id/main"
+        style="@style/MatMat"
+        android:background="@color/white">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle"
+            style="@style/MatMat"
+            android:layout_above="@+id/ll_menu"
+            android:layout_marginBottom="3dp" />
+
+        <View
+            style="@style/split_line"
+            android:layout_above="@+id/ll_menu" />
+
+        <LinearLayout
+            android:id="@+id/ll_menu"
+            style="@style/MatWra"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:paddingBottom="8dp">
+
+            <Button
+                android:id="@+id/btn_reset"
+                style="@style/Button_Cancle"
+                android:layout_weight="1"
+                android:text="重置" />
+
+            <Button
+                android:id="@+id/btn_sure"
+                style="@style/Button_Normal"
+                android:layout_weight="1"
+                android:text="确定" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

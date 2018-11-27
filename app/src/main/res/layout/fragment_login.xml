@@ -16,21 +16,19 @@
         style="@style/Text_Normal"
         android:padding="@dimen/dimens_8"
         android:text="@string/fragment_login_welcom"
+        android:layout_marginBottom="@dimen/qb_px_30"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/et_login_phone"
-        style="@style/Edit_NoBg_MW"
-        android:layout_marginTop="@dimen/view_magin_top"
-        android:hint="请输入手机号"
-        android:inputType="number" />
+        style="@style/Et_UserName"
+        android:hint="请输入手机号"/>
 
     <View style="@style/Line_W" />
 
     <EditText
         android:id="@+id/et_login_password"
-        style="@style/Edit_NoBg_MW"
-        android:layout_marginTop="@dimen/dimens_1"
+        style="@style/Et_Password"
         android:hint="请输入手密码" />
 
     <View style="@style/Line_W" />
@@ -38,7 +36,7 @@
     <Button
         android:id="@+id/btn_login_submit"
         style="@style/Button_Normal"
-        android:layout_marginTop="@dimen/view_magin_top"
+        android:layout_marginTop="@dimen/qb_px_40"
         android:text="@string/btn_login" />
 
     <TextView

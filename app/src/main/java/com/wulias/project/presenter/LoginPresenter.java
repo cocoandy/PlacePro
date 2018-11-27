@@ -22,5 +22,9 @@ public class LoginPresenter extends Presenter {
         userModle.login(vo, new RxObserver());
     }
 
+    public void userDetail(BaseVo vo) {
+        userModle.userDetail(vo, new RxObserver());
+    }
+
 
 }

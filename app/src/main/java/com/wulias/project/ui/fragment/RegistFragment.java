@@ -6,18 +6,15 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.wulias.project.R;
-import com.wulias.project.base.MVPActivity;
+import com.wulias.project.base.BaseBean;
 import com.wulias.project.base.MVPFragment;
-import com.wulias.project.bean.RegistVo;
+import com.wulias.project.bean.vo.RegistVo;
 import com.wulias.project.presenter.RegistPresenter;
 import com.wulias.project.tool.MsgTool;
 import com.wulias.project.tool.Tool;
 
-import java.lang.annotation.Annotation;
-
 import butterknife.BindView;
 import butterknife.OnClick;
-import butterknife.OnTextChanged;
 
 /**
  * 注册
@@ -56,13 +53,13 @@ public class RegistFragment extends MVPFragment<RegistPresenter> {
     }
 
     @Override
-    public void onSuccess(String json) {
-        super.onSuccess(json);
+    public void onSuccess(BaseBean json, Object object) {
+        super.onSuccess(json, object);
     }
 
-    @OnClick({R.id.btn_regist_submit,R.id.btn_regist_code})
-    public void onClick(View view){
-        switch (view.getId()){
+    @OnClick({R.id.btn_regist_submit, R.id.btn_regist_code})
+    public void onClick(View view) {
+        switch (view.getId()) {
             case R.id.btn_regist_submit:
                 regist();
                 break;
@@ -75,25 +72,25 @@ public class RegistFragment extends MVPFragment<RegistPresenter> {
     /**
      * 处理填写信息并注册
      */
-    public void regist(){
+    public void regist() {
         String userName = mEtPhone.getText().toString().trim();
         String userNickname = mEtNickname.getText().toString().trim();
         String userPassword = mEtPassword.getText().toString().trim();
 
-        if (Tool.isEmpty(userName)){
+        if (Tool.isEmpty(userName)) {
             MsgTool.showShortToast("");
             return;
         }
-        if (Tool.isEmpty(userNickname)){
+        if (Tool.isEmpty(userNickname)) {
             MsgTool.showShortToast("");
             return;
         }
-        if (Tool.isEmpty(userPassword)){
+        if (Tool.isEmpty(userPassword)) {
             MsgTool.showShortToast("");
             return;
         }
 
-        presenter.regist(new RegistVo(userName,userNickname,userPassword));
+        presenter.regist(new RegistVo(userName, userNickname, userPassword));
     }
 
     TextWatcher textWatcher = new TextWatcher() {

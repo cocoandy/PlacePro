@@ -3,6 +3,7 @@ package com.wulias.project.ui.activity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
+import android.view.View;
 
 import com.wulias.project.R;
 import com.wulias.project.base.MVPActivity;
@@ -26,6 +27,7 @@ public class CityActivity extends MVPActivity<CityPresenter> implements LetterNa
     LetterNavigationView mLnMenu;
     @BindView(R.id.recycle)
     RecyclerView mRvCity;
+
 
     private CityAdapter adapter;
     private FloatingItemDecoration itemDecoration;

@@ -1,4 +1,4 @@
-package com.wulias.project.bean;
+package com.wulias.project.bean.entity;
 
 import java.util.List;
 

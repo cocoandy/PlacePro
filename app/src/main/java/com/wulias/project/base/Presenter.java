@@ -1,5 +1,7 @@
 package com.wulias.project.base;
 
+import android.util.Log;
+
 import com.wulias.project.tool.Tool;
 import com.wulias.project.view.IHttp;
 
@@ -44,22 +46,24 @@ public abstract class Presenter<V> {
 
         @Override
         public void onSubscribe(Disposable d) {
-
         }
 
         @Override
         public void onNext(Object object) {
-            http.onSuccess(Tool.beanToString(object));
+            http.onSuccess((BaseBean) object,object);
+            Log.e("TAG_OO","------>onSuccess"+Tool.beanToString(object));
         }
 
         @Override
         public void onError(Throwable e) {
             http.onFail(e);
+            Log.e("TAG_OO","------>onSuccess"+e.getMessage());
         }
 
         @Override
         public void onComplete() {
             http.onCompleted();
+
         }
     }
 }

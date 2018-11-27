@@ -1,9 +1,13 @@
 package com.wulias.project.presenter;
 
+import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.view.WindowManager;
 
 import com.wulias.project.R;
+import com.wulias.project.base.BaseVo;
+import com.wulias.project.model.AdvertModel;
 import com.wulias.project.ui.fragment.CarFragment;
 import com.wulias.project.ui.fragment.GroundFragment;
 import com.wulias.project.ui.fragment.HomeFragment;
@@ -20,13 +24,15 @@ import io.reactivex.disposables.Disposable;
  * Created by Administrator on 2018/7/2.
  */
 
-public class TestPresenter extends Presenter<IMainView> implements OnFragmentInitialization {
+public class MainPresenter extends Presenter<IMainView> implements OnFragmentInitialization {
 
-    public TestPresenter() {
+    private AdvertModel advertModel;
 
+    public MainPresenter() {
+        advertModel = new AdvertModel();
     }
 
-    public void initNavigation(FragmentManager manager, NavigationBar mBmMenu){
+    public void initNavigation(FragmentManager manager, NavigationBar mBmMenu) {
         mBmMenu.setFragmentManager(manager, R.id.main_fragment);//设置管理  R.id.main_fragment是fragment要显示的地方
         // 字体颜色
         mBmMenu.setSelectTextColor(R.color.colorPrimary);
@@ -38,6 +44,10 @@ public class TestPresenter extends Presenter<IMainView> implements OnFragmentIni
         mBmMenu.addItem("我的", R.mipmap.ic_main_self, R.mipmap.ic_main_self_select);
         mBmMenu.addOnInitialization(this);//初始化回调，一定要设置，非Viewpage
         mBmMenu.selectCurrentItem(0);
+    }
+
+    public void advert(BaseVo vo) {
+        advertModel.advert(vo, new RxObserver());
     }
 
     private HomeFragment mHomeFragment;//首页
@@ -53,23 +63,32 @@ public class TestPresenter extends Presenter<IMainView> implements OnFragmentIni
                 if (mHomeFragment == null) {
                     mHomeFragment = new HomeFragment();
                 }
+                changePage(position,true);
                 return mHomeFragment;
             case 1:
                 if (mGroundFragment == null) {
                     mGroundFragment = new GroundFragment();
                 }
+                changePage(position,false);
                 return mGroundFragment;
             case 2:
                 if (mCarFragment == null) {
                     mCarFragment = new CarFragment();
                 }
+                changePage(position,false);
                 return mCarFragment;
             case 3:
                 if (mSelfFragment == null) {
                     mSelfFragment = new SelfFragment();
                 }
+                changePage(position,false);
                 return mSelfFragment;
         }
         return null;
     }
+
+    public void changePage(int position, boolean flag) {
+        view.changePage(position, flag);
+    }
+
 }

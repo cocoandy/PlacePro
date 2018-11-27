@@ -19,9 +19,10 @@ public class UserModle {
 
     /**
      * 登录
+     *
      * @param observer
      */
-    public void login(BaseVo vo, Presenter.RxObserver observer){
+    public void login(BaseVo vo, Presenter.RxObserver observer) {
         RetrofitManager
                 .getSingleton()
                 .RetrofitService()
@@ -33,9 +34,10 @@ public class UserModle {
 
     /**
      * 注册
+     *
      * @param observer
      */
-    public void regist(BaseVo vo, Presenter.RxObserver observer){
+    public void regist(BaseVo vo, Presenter.RxObserver observer) {
         RetrofitManager
                 .getSingleton()
                 .RetrofitService()
@@ -44,5 +46,21 @@ public class UserModle {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
     }
+
+    /**
+     * 注册
+     *
+     * @param observer
+     */
+    public void userDetail(BaseVo vo, Presenter.RxObserver observer) {
+        RetrofitManager
+                .getSingleton()
+                .RetrofitService()
+                .userDetail(Tool.toApiMap(vo))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(observer);
+    }
+
 
 }

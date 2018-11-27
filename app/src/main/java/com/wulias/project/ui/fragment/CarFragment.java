@@ -1,21 +1,16 @@
 package com.wulias.project.ui.fragment;
 
-import android.arch.lifecycle.Observer;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.util.CircularArray;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.wulias.project.R;
 import com.wulias.project.bean.UserInfo;
 import com.wulias.project.constacts.Constacts;
-import com.wulias.project.presenter.TestPresenter;
 import com.wulias.project.ui.adapter.DesignLoaderMoreAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -34,12 +29,12 @@ import butterknife.BindView;
  */
 
 public class CarFragment extends MVPFragment<CarPresenter> implements OnRefreshLoadMoreListener {
-    @BindView(R.id.status_title)
-    View mVStatusTitle;
     @BindView(R.id.recycle)
     RecyclerView mRecycle;
     @BindView(R.id.refresh)
     SmartRefreshLayout refresh;
+    @BindView(R.id.view_statusbar)
+    View mViewStatus;
 
     private LinearLayoutManager layoutManager;
 
@@ -77,8 +72,7 @@ public class CarFragment extends MVPFragment<CarPresenter> implements OnRefreshL
 
     @Override
     public void initView() {
-        ViewGroup.LayoutParams params = mVStatusTitle.getLayoutParams();
-        params.height = getStatusBarHeight();
+        showStatusBar(mViewStatus);
         initRecycle();
     }
     @Override

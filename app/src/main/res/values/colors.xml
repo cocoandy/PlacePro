@@ -15,4 +15,5 @@
 
     <color name="bg_progress">#88000000</color>
     <color name="bg_line">#88abaaaa</color>
+    <color name="bg_cacle">#88bebcbc</color>
 </resources>

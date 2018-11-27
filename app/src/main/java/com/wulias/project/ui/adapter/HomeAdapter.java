@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.wulias.project.R;
 import com.wulias.project.base.EmptyRecycle;
-import com.wulias.project.bean.HomeBean;
+import com.wulias.project.bean.entity.HomeBean;
 import com.wulias.project.tool.BannerImageLoader;
 import com.wulias.project.tool.ImagLoad;
 import com.wulias.project.tool.UI;

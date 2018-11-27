@@ -33,7 +33,7 @@ public class RetrofitManager {
 
     //构造方法创建Retrofit实例
     private void initRetrofitManager() {
-        retrofit = new Retrofit.Builder().baseUrl(Constacts.BASE_URL)
+        retrofit = new Retrofit.Builder().baseUrl(Constacts.BASE.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
@@ -41,7 +41,7 @@ public class RetrofitManager {
 
     //构造方法创建Retrofit实例
     private RetrofitManager buildRetrofit() {
-        retrofit = new Retrofit.Builder().baseUrl(Constacts.BASE_URL)
+        retrofit = new Retrofit.Builder().baseUrl(Constacts.BASE.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();

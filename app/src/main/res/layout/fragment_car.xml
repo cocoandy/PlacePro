@@ -1,37 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <View
-        android:id="@+id/status_title"
-        style="@style/title_status"/>
+
+    <include layout="@layout/view_statusbar" />
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        style="@style/title_toolbar"
-        android:layout_below="@+id/status_title"
-        android:background="@color/white">
+        style="@style/Toolbar_Normal">
 
         <TextView
+            style="@style/text_16"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            style="@style/text_16"
             android:layout_gravity="center"
-            android:textColor="@color/black"
             android:gravity="center"
             android:text="购物车"
-            />
+            android:textColor="@color/black" />
     </android.support.v7.widget.Toolbar>
-    <View
-        style="@style/split_line"/>
+
+    <View style="@style/split_line" />
+
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
         android:id="@+id/refresh"
         style="@style/refresh_layout">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 

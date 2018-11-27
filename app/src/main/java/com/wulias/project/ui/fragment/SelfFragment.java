@@ -10,10 +10,8 @@ import android.widget.ImageView;
 
 import com.wulias.project.R;
 import com.wulias.project.base.MVPFragment;
-import com.wulias.project.bean.SelfBean;
+import com.wulias.project.bean.entity.SelfBean;
 import com.wulias.project.presenter.SelfPresenter;
-import com.wulias.project.presenter.TestPresenter;
-import com.wulias.project.tool.Tool;
 import com.wulias.project.ui.activity.LoginActivity;
 import com.wulias.project.ui.adapter.SelfAdapter;
 import com.wulias.project.weight.SpacesItemDecoration;
@@ -38,6 +36,8 @@ public class SelfFragment extends MVPFragment<SelfPresenter> {
     Toolbar toolbar;
     @BindView(R.id.img_self_setting)
     ImageView mImgSetting;
+    @BindView(R.id.view_statusbar)
+    View mViewStatus;
 
     private SelfAdapter adapter;
     private List<SelfBean> mData;
@@ -55,6 +55,7 @@ public class SelfFragment extends MVPFragment<SelfPresenter> {
 
     @Override
     public void initView() {
+        showStatusBar(mViewStatus);
         initRecycle();
     }
 

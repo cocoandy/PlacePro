@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--横向分割线 1dp-->
     <style name="split_line">
@@ -38,13 +38,6 @@
     <style name="title_status">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">22dp</item>
-        <item name="android:background">?attr/colorPrimary</item>
-    </style>
-
-    <!--标题栏-->
-    <style name="title_toolbar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?attr/actionBarSize</item>
         <item name="android:background">?attr/colorPrimary</item>
     </style>
 
@@ -117,7 +110,7 @@
     </style>
 
     <!--订场地 搜索条件按钮-->
-    <style name="text_ground_menu" >
+    <style name="text_ground_menu">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:singleLine">true</item>
@@ -125,7 +118,7 @@
     </style>
 
     <!--订场地 搜索条件按钮-->
-    <style name="ll_ground_menu" >
+    <style name="ll_ground_menu">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:padding">@dimen/dimens_8</item>
@@ -134,13 +127,9 @@
     </style>
 
     <!--按钮-->
-    <style name="Button_Normal" >
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/button_normal</item>
-        <item name="android:layout_marginLeft">@dimen/dimens_8</item>
-        <item name="android:layout_marginRight">@dimen/dimens_8</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:background">@drawable/bg_button_normal</item>
+    <style name="Button_Cancle" parent="Button_Normal">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/bg_button_cacle</item>
     </style>
 
     <!--输入框-->
@@ -183,5 +172,127 @@
         <item name="android:background">@color/bg_line</item>
         <item name="android:layout_marginLeft">@dimen/dimens_8</item>
         <item name="android:layout_marginRight">@dimen/dimens_8</item>
+    </style>
+
+    <!--轮播图-->
+    <style name="Banner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/qb_px_200</item>
+    </style>
+
+    <!--CollapsingToolbarLayout(一般和轮播图一起用，所以大小和轮播一样)-->
+    <style name="Collapsing" parent="Banner">
+        <item name="contentScrim">?attr/colorPrimary</item>
+        <item name="layout_scrollFlags">scroll|exitUntilCollapsed</item>
+    </style>
+
+    <!--默认的标题栏-->
+    <style name="Toolbar_Normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!--透明的标题栏-->
+    <style name="Toolbar_Translucent" parent="Toolbar_Normal">
+        <item name="android:background">@color/translucent</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!--标题属性居中-->
+    <style name="ToolBar_Title" parent="WraWra">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <!-- ********** Login *********-->
+
+    <!--密码框-->
+    <style name="Et_Password" parent="Edit_NoBg_MW">
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <!--用户名-->
+    <style name="Et_UserName" parent="Edit_NoBg_MW">
+        <item name="android:inputType">number</item>
+    </style>
+
+    <!--验证码获取按钮-->
+    <style name="Btn_Code" parent="Button_Normal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/button_small</item>
+    </style>
+
+    <!--验证码输入框-->
+    <style name="Et_Code" parent="Edit_NoBg_MW">
+        <item name="android:layout_weight">1</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+
+    <!-- ********** Fragment Home *********-->
+
+    <!-- 当前所在城市 -->
+    <style name="Tv_City" parent="WraWra">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!-- ********** Fragment Home *********-->
+
+    <!-- 搜索框 -->
+    <style name="ET_Scaner" parent="MatMat">
+        <item name="android:layout_height">28dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:background">@drawable/share_radius1111_e3_16</item>
+    </style>
+
+    <!-- 菜单 -->
+    <style name="Img_Menu" parent="WraWra">
+        <item name="android:layout_height">28dp</item>
+        <item name="android:layout_marginLeft">@dimen/dimens_16</item>
+        <item name="android:layout_marginRight">@dimen/dimens_16</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+
+    <!-- ********** Fragment Self *********-->
+
+    <!-- 设置 -->
+    <style name="Self_Img_Setting">
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_marginLeft">@dimen/dimens_16</item>
+        <item name="android:padding">@dimen/dimens_3</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:src">@mipmap/ic_setting</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- 消息 -->
+    <style name="Self_Img_Message">
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:padding">@dimen/dimens_3</item>
+        <item name="android:layout_marginRight">@dimen/dimens_16</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:src">@mipmap/ic_message</item>
+    </style>
+
+    <!-- ********** Activity Search *********-->
+
+    <!-- 搜索按钮 -->
+    <style name="Search_Tv_Search" parent="WraWra">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:gravity">center</item>
     </style>
 </resources>

@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <View
-        android:id="@+id/status_title"
-        style="@style/title_status"></View>
-
-
+    android:id="@+id/main"
+    style="@style/LL_V_MM">
+    <include layout="@layout/view_statusbar" />
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        style="@style/title_toolbar"
-        android:background="@color/translucent"
+        style="@style/Toolbar_Translucent"
         app:layout_collapseMode="pin">
 
         <RelativeLayout
@@ -21,30 +14,22 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="28dp"
-
+                android:id="@+id/tv_ground_scaner"
+                style="@style/ET_Scaner"
                 android:layout_toLeftOf="@+id/fragment_ground_more"
-                android:background="@drawable/share_radius1111_e3_16"
-                android:gravity="center_vertical"
                 android:hint="@string/home_search" />
 
             <ImageView
                 android:id="@+id/fragment_ground_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="@dimen/dimens_16"
-                android:layout_marginRight="@dimen/dimens_16"
+                style="@style/Img_Menu"
                 android:src="@mipmap/ic_more" />
         </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:id="@+id/ll_menu"
+        style="@style/MatWra">
 
         <LinearLayout
             android:id="@+id/ll_ground_men_normal"
@@ -128,7 +113,6 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/ground_recycle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            style="@style/MatMat" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>

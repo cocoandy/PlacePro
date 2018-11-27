@@ -2,9 +2,11 @@ package com.wulias.project.tool;
 
 import android.app.AppOpsManager;
 import android.app.NotificationManager;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
+import android.os.Environment;
 import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,6 +18,10 @@ import com.wulias.project.base.BaseVo;
 import com.wulias.project.base.BaseTool;
 import com.wulias.project.constacts.Constacts;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
@@ -38,9 +44,19 @@ public class Tool extends BaseTool {
      */
     public static Map<String, String> toMap(BaseVo api) {
         Gson gson = new Gson();
-        Type type = new TypeToken<Map<String, String>>() {
-        }.getType();
+        Type type = new TypeToken<Map<String, String>>() {}.getType();
         return gson.fromJson(gson.toJson(api), type);
+    }
+
+    /**
+     * 转成ContentValues
+     * @param object
+     * @return
+     */
+    public static ContentValues toContentValues(Object object){
+        Gson gson = new Gson();
+        Type type = new TypeToken<Map<String, String>>() {}.getType();
+        return gson.fromJson(gson.toJson(object), type);
     }
 
     /**
@@ -61,6 +77,7 @@ public class Tool extends BaseTool {
         sb.append(Constacts.MD5_KEY_END);
         //对值进行md5加密
         map.put(Constacts.Key.KEY_HTTP_SIGN, md5(sb.toString()));
+        Log.e("TAG_OO",beanToString(map));
         return map;
     }
 
@@ -203,6 +220,62 @@ public class Tool extends BaseTool {
             e.printStackTrace();
         }
         return "";
+    }
+
+
+    /**
+     * 获取下载地址
+     * @return
+     */
+    public static String getDir() {
+        StringBuffer sb = new StringBuffer();
+        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+            sb.append(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath());
+            return sb.toString();
+        } else {
+            File f = getContext().getCacheDir();
+            if (null != f) {
+                sb.append(f.getAbsolutePath());
+                sb.append("/");
+                return sb.toString();
+            }
+
+        }
+        return null;
+    }
+
+    /**
+     * 复制文件
+     *
+     * @param source 输入文件
+     * @param target 输出文件
+     */
+    public static void copy(File source, File target) {
+        FileInputStream fileInputStream = null;
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileInputStream = new FileInputStream(source);
+            fileOutputStream = new FileOutputStream(target);
+            byte[] buffer = new byte[1024];
+            while (fileInputStream.read(buffer) > 0) {
+                fileOutputStream.write(buffer);
+            }
+        } catch (Exception e) {
+            Log.e("TAG_PP","----->>"+e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fileInputStream != null) {
+                    fileInputStream.close();
+                }
+                if (fileOutputStream != null) {
+                    fileOutputStream.close();
+                }
+            } catch (IOException e) {
+                Log.e("TAG_PP","----->>1111"+e.getMessage());
+                e.printStackTrace();
+            }
+        }
     }
 
 }

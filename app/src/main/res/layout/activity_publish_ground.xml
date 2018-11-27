@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wulias.project.ui.activity.PublishGroundActivity">
+
+    <include layout="@layout/view_toolbar" />
+
+    <EditText
+        android:id="@+id/et_publish_name"
+        style="@style/Edit_NoBg_MW"
+        android:hint="请输入联系人"
+        android:inputType="number" />
+
+    <View style="@style/Line_W" />
+
+    <EditText
+        android:id="@+id/et_publish_phone"
+        style="@style/Edit_NoBg_MW"
+        android:hint="请输入手机号"
+        android:inputType="number" />
+
+    <View style="@style/Line_W" />
+
+    <EditText
+        android:id="@+id/et_publish_ground_name"
+        style="@style/Edit_NoBg_MW"
+        android:hint="请输入场地名称"
+        android:inputType="number" />
+
+    <View style="@style/Line_W" />
+
+    <EditText
+        android:id="@+id/et_publish_ground_address"
+        style="@style/Edit_NoBg_MW"
+        android:hint="请输入场地地址（精确到省、市、县）"
+        android:inputType="number" />
+
+    <View style="@style/Line_W" />
+
+    <EditText
+        android:id="@+id/et_publish_ground_"
+        style="@style/Edit_NoBg_MW"
+        android:hint="待定"
+        android:inputType="number" />
+
+    <View style="@style/Line_W" />
+
+</LinearLayout>

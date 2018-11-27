@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wulias.project.ui.activity.GuideActivity">
+
+    <ImageView
+        android:id="@+id/guide_cover"
+        style="@style/MatMat"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        style="@style/text_normal"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/size_16"
+        android:textColor="@color/white"
+        android:text="广告" />
+
+    <TextView
+        android:id="@+id/guide_finish"
+        style="@style/text_normal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/dimens_30"
+        android:layout_marginRight="@dimen/dimens_16"
+        android:padding="@dimen/dimens_8"
+        android:textColor="@color/white"
+        android:text="跳过3s" />
+</RelativeLayout>

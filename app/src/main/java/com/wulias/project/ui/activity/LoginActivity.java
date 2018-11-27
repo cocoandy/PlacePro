@@ -5,6 +5,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -38,8 +39,12 @@ public class LoginActivity extends MVPActivity<LoginPresenter> implements CallBa
     final int ACTION_TYPE_REGIST = 2;//注册
     final int ACTION_TYPE_FORGET = 3;//忘记密码
 
+    @BindView(R.id.toolbar)
+    Toolbar mTbTitle;
     @BindView(R.id.tv_login_action)
     TextView mTvAction;
+    @BindView(R.id.tv_title)
+    TextView mTvTitle;
 
 
     private LoginFragment loginFragment;
@@ -52,6 +57,13 @@ public class LoginActivity extends MVPActivity<LoginPresenter> implements CallBa
     @Override
     public void initView() {
         changeTodo(ACTION_TYPE_LOGIN);
+        mTvTitle.setText(R.string.title_login);
+        setToolbar(mTbTitle, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override
@@ -74,9 +86,13 @@ public class LoginActivity extends MVPActivity<LoginPresenter> implements CallBa
         switch (view.getId()) {
             case R.id.tv_login_action:
                 if (actionType == ACTION_TYPE_LOGIN) {
+                    //转换成注册
                     changeTodo(ACTION_TYPE_REGIST);
+                    mTvTitle.setText(R.string.title_regist);
                 } else {
+                    //转换成登录
                     changeTodo(ACTION_TYPE_LOGIN);
+                    mTvTitle.setText(R.string.title_login);
                 }
 
                 break;

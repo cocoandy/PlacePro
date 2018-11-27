@@ -1,4 +1,4 @@
-package com.wulias.project.bean;
+package com.wulias.project.bean.entity;
 
 /**
  * Created by Administrator on 2018/6/29.

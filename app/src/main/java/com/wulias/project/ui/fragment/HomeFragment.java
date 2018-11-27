@@ -1,20 +1,24 @@
 package com.wulias.project.ui.fragment;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.wulias.project.R;
 import com.wulias.project.base.MVPFragment;
-import com.wulias.project.bean.HomeBean;
+import com.wulias.project.bean.entity.HomeBean;
 import com.wulias.project.presenter.HomePresenter;
 import com.wulias.project.tool.BannerImageLoader;
 import com.wulias.project.ui.activity.CityActivity;
+import com.wulias.project.ui.activity.SearchActivity;
+import com.wulias.project.ui.activity.YTWebViewActivity;
 import com.wulias.project.ui.adapter.HomeAdapter;
 import com.youth.banner.Banner;
 
@@ -122,12 +126,18 @@ public class HomeFragment extends MVPFragment<HomePresenter> {
     }
 
 
-    @OnClick({R.id.home_title_city})
+    @OnClick({R.id.home_title_city, R.id.home_scaner})
     public void onClick(View view) {
+        Intent intent = null;
         switch (view.getId()) {
             case R.id.home_title_city:
-                Intent intent = new Intent();
-                intent.setClass(mContext, CityActivity.class);
+                intent = new Intent();
+                intent.setClass(mContext, YTWebViewActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.home_scaner:
+                intent = new Intent();
+                intent.setClass(mContext, SearchActivity.class);
                 startActivity(intent);
                 break;
         }

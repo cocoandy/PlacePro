@@ -6,9 +6,7 @@
 
     <EditText
         android:id="@+id/et_regist_phone"
-        style="@style/Edit_NoBg_MW"
-        android:layout_height="42dp"
-        android:layout_marginTop="@dimen/view_magin_top"
+        style="@style/Et_UserName"
         android:hint="@string/fragment_regist_hint_username" />
 
     <View style="@style/Line_W" />
@@ -19,16 +17,12 @@
 
         <EditText
             android:id="@+id/et_regist_code"
-            style="@style/Edit_NoBg_MW"
-            android:inputType="number"
-            android:layout_weight="1"
+            style="@style/Et_Code"
             android:hint="@string/fragment_regist_hint_code" />
 
         <Button
             android:id="@+id/btn_regist_code"
-            style="@style/Button_Normal"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/button_small"
+            style="@style/Btn_Code"
             android:text="@string/btn_code" />
     </LinearLayout>
 
@@ -43,14 +37,14 @@
 
     <EditText
         android:id="@+id/et_regist_password"
-        style="@style/Edit_NoBg_MW"
+        style="@style/Et_Password"
         android:hint="@string/fragment_regist_hint_password" />
 
     <View style="@style/Line_W" />
 
     <EditText
         android:id="@+id/et_regist_repassword"
-        style="@style/Edit_NoBg_MW"
+        style="@style/Et_Password"
         android:hint="@string/fragment_regist_hint_repassword" />
 
     <View style="@style/Line_W" />

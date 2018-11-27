@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/MatWra"
+    android:orientation="vertical">
+
+    <com.youth.banner.Banner
+        android:id="@+id/item_ground_banner"
+        style="@style/Banner" />
+
+    <LinearLayout style="@style/MatWra">
+
+    </LinearLayout>
+
+    <view style="@style/Line_W" />
+
+    <TextView
+        android:id="@+id/item_ground_name"
+        style="@style/Text_Normal"
+        android:height="42dp" />
+
+    <view style="@style/Line_W" />
+
+</LinearLayout>

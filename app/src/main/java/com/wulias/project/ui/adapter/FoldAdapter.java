@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.wulias.project.R;
 import com.wulias.project.base.RecycleAdapter;
-import com.wulias.project.bean.GroundBean;
+import com.wulias.project.bean.entity.GroundBean;
 
 import java.util.HashMap;
 import java.util.List;

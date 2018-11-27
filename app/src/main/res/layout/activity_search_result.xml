@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LL_V_MM"
+    tools:context="com.wulias.project.ui.activity.SearchResultActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar_Translucent"
+        app:layout_collapseMode="pin">
+
+        <RelativeLayout style="@style/MatWra">
+
+            <TextView
+                android:id="@+id/tv_search"
+                style="@style/Base_Search"
+                android:layout_marginRight="8dp"
+                android:hint="@string/home_search" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+    <View style="@style/split_line" />
+</LinearLayout>

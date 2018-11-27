@@ -1,38 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    style="@style/MatMat">
 
-    <View
-        android:id="@+id/status_title"
-        style="@style/title_status"></View>
+    <include layout="@layout/view_statusbar" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/self_recycle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/status_title" />
+        style="@style/MatMat"
+        android:layout_below="@+id/view_statusbar"/>
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        style="@style/title_toolbar"
-        android:layout_below="@+id/status_title"
-        android:background="@color/translucent">
+        style="@style/Toolbar_Normal"
+        android:layout_below="@+id/view_statusbar">
 
         <ImageView
             android:id="@+id/img_self_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/dimens_16"
-            android:adjustViewBounds="true"
-            android:src="@mipmap/ic_setting" />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/dimens_16"
-            android:layout_gravity="right"
-            android:adjustViewBounds="true"
-            android:src="@mipmap/ic_message" />
+            style="@style/Self_Img_Setting" />
+
+        <ImageView style="@style/Self_Img_Message" />
     </android.support.v7.widget.Toolbar>
+
 </RelativeLayout>

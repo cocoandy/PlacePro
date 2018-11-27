@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/LL_V_MM"
+    tools:context="com.wulias.project.ui.activity.SearchActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar_Translucent"
+        app:layout_collapseMode="pin">
+
+        <RelativeLayout style="@style/MatWra">
+
+            <EditText
+                android:id="@+id/et_scaner"
+                style="@style/Base_Search"
+                android:layout_toLeftOf="@+id/bnt_search"
+                android:hint="@string/home_search" />
+
+            <TextView
+                android:id="@+id/bnt_search"
+                style="@style/Search_Tv_Search"
+                android:layout_alignParentRight="true"
+                android:text="搜索" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <View style="@style/split_line" />
+
+    <com.wulias.project.weight.FlowTagLayout
+        android:id="@+id/color_flow_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle"
+        style="@style/MatMat" />
+</LinearLayout>

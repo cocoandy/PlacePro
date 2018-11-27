@@ -8,8 +8,13 @@
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            style="@style/Toolbar_Normal">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/ToolBar_Title" />
+
+        </android.support.v7.widget.Toolbar>
 
         <View style="@style/split_line" />
     </LinearLayout>
