@@ -4,7 +4,7 @@ import android.os.CountDownTimer;
 
 import com.wulias.project.base.Presenter;
 import com.wulias.project.listener.CallBack;
-import com.wulias.project.tool.Tool;
+import com.wulias.project.util.Tool;
 
 import java.io.File;
 

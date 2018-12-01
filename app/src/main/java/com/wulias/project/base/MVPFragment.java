@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import com.wulias.project.constacts.Constacts;
-import com.wulias.project.tool.Tool;
+import com.wulias.project.util.Tool;
 import com.wulias.project.view.IHttp;
 import com.wulias.project.view.IMVPView;
 

@@ -1,4 +1,4 @@
-package com.wulias.project.tool;
+package com.wulias.project.util;
 
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.LiveData;

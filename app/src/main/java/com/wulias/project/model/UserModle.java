@@ -3,9 +3,7 @@ package com.wulias.project.model;
 import com.wulias.project.base.BaseVo;
 import com.wulias.project.base.Presenter;
 import com.wulias.project.retrofit.RetrofitManager;
-import com.wulias.project.tool.Tool;
-
-import java.util.Map;
+import com.wulias.project.util.Tool;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;

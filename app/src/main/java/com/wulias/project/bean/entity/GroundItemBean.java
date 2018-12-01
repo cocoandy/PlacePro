@@ -1,19 +1,21 @@
 package com.wulias.project.bean.entity;
 
+import com.wulias.project.base.BaseBean;
+
 import java.io.Serializable;
 
 /**
  * Created by Administrator on 2018/8/9.
  */
 
-public class GroundBean implements Serializable {
+public class GroundItemBean implements Serializable {
 
    private boolean isSelect;
    private String name;
    private String title;
    private String cover;
 
-    public GroundBean(String name, String title) {
+    public GroundItemBean(String name, String title) {
         this.name = name;
         this.title = title;
     }

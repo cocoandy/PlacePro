@@ -10,10 +10,9 @@ import com.wulias.project.base.MVPFragment;
 import com.wulias.project.bean.vo.LoginVo;
 import com.wulias.project.bean.vo.UserVo;
 import com.wulias.project.listener.CallBack;
-import com.wulias.project.manage.ResultManage;
 import com.wulias.project.presenter.LoginPresenter;
-import com.wulias.project.tool.MsgTool;
-import com.wulias.project.tool.Tool;
+import com.wulias.project.util.MsgTool;
+import com.wulias.project.util.Tool;
 
 import butterknife.BindView;
 import butterknife.OnClick;

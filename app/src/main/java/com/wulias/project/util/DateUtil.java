@@ -1,4 +1,4 @@
-package com.wulias.project.tool;
+package com.wulias.project.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -10,7 +10,7 @@ import java.util.GregorianCalendar;
  * Created by 曹小贼 on 2018/10/9.
  */
 
-public class DateTool {
+public class DateUtil {
     /**
      * add by gongtao
      * <p>
@@ -87,8 +87,8 @@ public class DateTool {
      * @param starTime
      */
     public static String calculateDate(long starTime) {
-        String date = DateTool.getStrDate4Date(new Date(starTime), "MM月dd日");
-        int time = DateTool.getDayInYear(starTime);
+        String date = DateUtil.getStrDate4Date(new Date(starTime), "MM月dd日");
+        int time = DateUtil.getDayInYear(starTime);
         switch (time) {
             case 0:
                 date = "今天" + date;

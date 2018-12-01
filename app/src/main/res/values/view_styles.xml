@@ -3,7 +3,7 @@
     <!--横向分割线 1dp-->
     <style name="split_line">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_height">0.5dp</item>
         <item name="android:background">@color/split_line</item>
     </style>
 
@@ -159,7 +159,7 @@
     <!--横向分割线-->
     <style name="Line_W">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_height">0.5dp</item>
         <item name="android:background">@color/split_line</item>
         <item name="android:layout_marginLeft">@dimen/dimens_8</item>
         <item name="android:layout_marginRight">@dimen/dimens_8</item>

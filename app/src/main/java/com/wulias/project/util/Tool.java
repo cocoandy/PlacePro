@@ -1,4 +1,4 @@
-package com.wulias.project.tool;
+package com.wulias.project.util;
 
 import android.app.AppOpsManager;
 import android.app.NotificationManager;

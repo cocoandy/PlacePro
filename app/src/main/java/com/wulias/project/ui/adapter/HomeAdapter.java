@@ -13,9 +13,9 @@ import android.widget.TextView;
 import com.wulias.project.R;
 import com.wulias.project.base.EmptyRecycle;
 import com.wulias.project.bean.entity.HomeBean;
-import com.wulias.project.tool.BannerImageLoader;
-import com.wulias.project.tool.ImagLoad;
-import com.wulias.project.tool.UI;
+import com.wulias.project.util.BannerImageLoader;
+import com.wulias.project.util.ImagLoad;
+import com.wulias.project.util.UI;
 import com.youth.banner.Banner;
 
 import java.util.List;

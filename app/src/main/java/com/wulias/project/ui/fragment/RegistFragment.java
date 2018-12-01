@@ -10,8 +10,8 @@ import com.wulias.project.base.BaseBean;
 import com.wulias.project.base.MVPFragment;
 import com.wulias.project.bean.vo.RegistVo;
 import com.wulias.project.presenter.RegistPresenter;
-import com.wulias.project.tool.MsgTool;
-import com.wulias.project.tool.Tool;
+import com.wulias.project.util.MsgTool;
+import com.wulias.project.util.Tool;
 
 import butterknife.BindView;
 import butterknife.OnClick;

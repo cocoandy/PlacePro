@@ -2,7 +2,7 @@ package com.wulias.project.base;
 
 import android.util.Log;
 
-import com.wulias.project.tool.Tool;
+import com.wulias.project.util.Tool;
 import com.wulias.project.view.IHttp;
 
 import io.reactivex.Observer;

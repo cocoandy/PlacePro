@@ -13,13 +13,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import com.wulias.project.constacts.Constacts;
-import com.wulias.project.tool.SPTool;
-import com.wulias.project.tool.Tool;
+import com.wulias.project.util.SPTool;
+import com.wulias.project.util.Tool;
 import com.wulias.project.view.IHttp;
 import com.wulias.project.view.IMVPView;
 

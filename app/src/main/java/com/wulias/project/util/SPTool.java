@@ -1,9 +1,8 @@
-package com.wulias.project.tool;
+package com.wulias.project.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.wulias.project.base.App;
 import com.wulias.project.constacts.Constacts;
 
 /**

@@ -12,7 +12,7 @@ import android.widget.TextView;
 import com.wulias.project.R;
 import com.wulias.project.base.RecycleAdapter;
 import com.wulias.project.bean.entity.GroundBean;
-import com.wulias.project.tool.ImagLoad;
+import com.wulias.project.util.ImagLoad;
 
 import java.util.HashMap;
 import java.util.List;

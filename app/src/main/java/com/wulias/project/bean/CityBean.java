@@ -2,11 +2,13 @@ package com.wulias.project.bean;
 
 import com.wulias.project.base.BaseBean;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2018/7/25.
  */
 
-public class CityBean extends BaseBean {
+public class CityBean implements Serializable {
     //城市名称拼音
     private String cityPinYin;
 

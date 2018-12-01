@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.wulias.project.bean.UserBean;
-import com.wulias.project.tool.Tool;
+import com.wulias.project.util.Tool;
 
 /**
  * SQLite管理类 数据持久化

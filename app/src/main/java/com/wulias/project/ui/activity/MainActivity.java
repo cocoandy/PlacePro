@@ -5,7 +5,6 @@ import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
-import android.view.View;
 import android.view.WindowManager;
 
 import com.bumptech.glide.Glide;
@@ -18,8 +17,8 @@ import com.wulias.project.base.BaseVo;
 import com.wulias.project.base.MVPActivity;
 import com.wulias.project.bean.AdvertBean;
 import com.wulias.project.presenter.MainPresenter;
-import com.wulias.project.tool.MsgTool;
-import com.wulias.project.tool.Tool;
+import com.wulias.project.util.MsgTool;
+import com.wulias.project.util.Tool;
 import com.wulias.project.view.IMainView;
 
 import java.io.File;

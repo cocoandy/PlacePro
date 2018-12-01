@@ -1,34 +1,16 @@
 package com.wulias.project.ui.activity;
 
-import android.arch.lifecycle.Observer;
-import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.wulias.project.R;
 import com.wulias.project.base.MVPActivity;
-import com.wulias.project.constacts.Constacts;
 import com.wulias.project.listener.CallBack;
 import com.wulias.project.presenter.LoginPresenter;
-import com.wulias.project.tool.LiveDataBus;
 import com.wulias.project.ui.fragment.ForgetFragment;
 import com.wulias.project.ui.fragment.LoginFragment;
 import com.wulias.project.ui.fragment.RegistFragment;
-
-import org.w3c.dom.Text;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import butterknife.BindView;
 import butterknife.OnClick;

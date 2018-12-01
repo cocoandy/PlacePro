@@ -4,8 +4,8 @@ import android.support.v7.widget.LinearLayoutManager;
 
 import com.wulias.project.base.Presenter;
 import com.wulias.project.bean.CityBean;
-import com.wulias.project.tool.PinYinComparator;
-import com.wulias.project.tool.Tool;
+import com.wulias.project.util.PinYinComparator;
+import com.wulias.project.util.Tool;
 import com.wulias.project.view.IMainView;
 
 import java.util.ArrayList;

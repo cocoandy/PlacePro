@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.wulias.project.R;
 import com.wulias.project.base.BaseBean;
 import com.wulias.project.base.RecycleAdapter;
+import com.wulias.project.bean.entity.GroundBean;
 
 import java.util.List;
 
@@ -18,9 +19,9 @@ import java.util.List;
 
 public class GroundDetailAdapter extends RecycleAdapter {
 
-    List<BaseBean> mData;
+    List mData;
 
-    public GroundDetailAdapter(Context context, List<BaseBean> mData) {
+    public GroundDetailAdapter(Context context, List mData) {
         super(context);
         this.mData = mData;
     }
@@ -41,6 +42,14 @@ public class GroundDetailAdapter extends RecycleAdapter {
         } else {
             return new GroundDetailHolde(getItemView(parent, R.layout.item_ground_detail));
         }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (mData.get(position) instanceof GroundBean){
+            return 0;
+        }
+        return 1;
     }
 
     @Override

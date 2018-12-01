@@ -2,11 +2,13 @@ package com.wulias.project.bean.entity;
 
 import com.wulias.project.base.BaseBean;
 
+import java.io.Serializable;
+
 /**
  * Created by 曹小贼 on 2018/8/17.
  */
 
-public class SelfBean extends BaseBean {
+public class SelfBean implements Serializable {
     private int type;//0：用户信息 1：订单 2：工具 3：标题 4：其余可跳转项
     private String msg;
     private String title;

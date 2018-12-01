@@ -15,7 +15,7 @@ import com.wulias.project.presenter.SelfPresenter;
 import com.wulias.project.ui.activity.LoginActivity;
 import com.wulias.project.ui.adapter.SelfAdapter;
 import com.wulias.project.weight.SpacesItemDecoration;
-import com.wulias.project.tool.UI;
+import com.wulias.project.util.UI;
 
 import java.util.ArrayList;
 import java.util.List;
